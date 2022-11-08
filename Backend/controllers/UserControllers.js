@@ -4,9 +4,8 @@ const { json } = require("body-parser");
  
 module.exports.register =async (req, res, next) => {
 try {
-	console.log(req.body);
-		const { username, email, password } = req.body;
-	 
+		const {username, email, password,profileImage} = req.body;
+	 console.log(req.body)
 	const ChekIfUserExist = await User.findOne({ username })
 	if (ChekIfUserExist) {
 		return res.json({ msg: "Username already used", status: false })
@@ -19,7 +18,8 @@ try {
 	const user = User.create({
 		email,
 		username,
-		password: hashingOfPassword
+		password: hashingOfPassword,
+		profileImage
 	});
 	
 	delete user.password;
@@ -51,4 +51,5 @@ try {
 }
 }
 	
-	;
+		
+	
