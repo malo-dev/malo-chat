@@ -1,12 +1,7 @@
-const Mongoose = require("mongoose");
-require('dotenv').config();
-const database = () => {
-	Mongoose.connect(process.env.DB_URL)
-	.then(() => {
-	console.log('database is connected with successfully');
-	})
-	.catch((err) => {
-	console.log('connexion to database is failed , try to check your network conection or check this error : ' + err.message);
-})
+const mongoose = require('mongoose')
+const Database = () => {
+	mongoose.connect('mongodb+srv://malochat:malochat37700@cluster0.dysk2py.mongodb.net/malochat') 
+	.then(() => console.log('database is connected successfully '))
+	.catch(err => console.log(err))
 }
-module.exports = database
+module.exports = Database
