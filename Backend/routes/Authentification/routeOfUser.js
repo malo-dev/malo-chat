@@ -53,7 +53,7 @@ routeOfUser.get('/', authMidller,(req,res) => {
 	res.send(req.user)
 })
 routeOfUser.get('/allusers/:id', getAllUsers)
-router.post("/setavatar/:id", setAvatar);
-router.get("/logout/:id", logOut);
+routeOfUser.post("/setavatar/:id", setAvatar);
+routeOfUser.get("/logout/:id", logOut);
 module.exports = routeOfUser
  

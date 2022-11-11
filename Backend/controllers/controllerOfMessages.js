@@ -46,8 +46,8 @@ module.exports.addMessage = async (req, res, next) => {
 
     if (data) return res.json({ msg: "Message added successfully." });
     else return res.json({ msg: "Failed to add message to the database" });
-  } catch (ex) {
-    next(ex);
+  } catch (error) {
+    next(error);
   }
 };
 module.exports.setAvatar = async (req, res, next) => {

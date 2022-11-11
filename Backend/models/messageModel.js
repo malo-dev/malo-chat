@@ -5,7 +5,9 @@ const MessageSchema = mongoose.Schema(
     message: {
       text: { type: String, required: true },
     },
+    // refractoring of users in a sender or remove it
     users: Array,
+    // refractoring of this below
     sender: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
