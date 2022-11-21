@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGO_DB_URL)
 	app.listen(process.env.PORT,()=>console.log("Listening on port http://localhost:"+process.env.PORT))
 	})
 	.catch((err) => {
-	console.log(err);
+	console.log(err); 
 	})
 app.use('/auth', AuthRoute)
 app.use('/user', UserRoute)
